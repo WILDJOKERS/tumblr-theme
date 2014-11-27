@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Theme Variables -->
+    <meta content="bg-cover-upload" name="select:Background Style" title=
+    "Cover (Upload)">
+    <meta content="bg-cover-url" name="select:Background Style" title=
+    "Cover (URL)">
+    <meta content="bg-tile-upload" name="select:Background Style" title=
+    "Tiled (Upload)">
+    <meta content="bg-tile-url" name="select:Background Style" title=
+    "Tiled (URL)">
+    <meta content="bg-color" name="select:Background Style" title=
+    "Solid Color">
+    <meta content="1" name="if:Enable Social">
+    <meta content="1" name="if:Enable Gist Embed">
+    <meta content="1" name="if:Enable Search">
+    <meta content="1" name="if:Enable Photo Bg">
+    <meta content="" name="text:Disqus Shortname">
+    <meta content="" name="text:Background URL">
+    <meta content="" name="image:Background">
+    <meta content="#ffffff" name="color:Page Background">
+    <meta content="#ffffff" name="color:Post Background">
+    <meta content="#888888" name="color:Post Shadow">
+    <meta content="#000000" name="color:Text Color">
+    <meta content="#0000A0" name="color:Link Color">
+    <meta content="#524b4b" name="color:Icon Color">
+    <!-- Search engine stuff -->
+    <meta content="" name="text:Snippet Author">
+    <meta content="" name="text:Snippet Byline">
+    <meta content="" name="text:Snippet Locality">
+    <meta content="" name="text:Snippet Region">
+    <meta content="" name="text:Snippet Affiliation">
+
+    <title>{Title}</title>
+    <link href="{Favicon}" rel="shortcut icon">
+    <link href="{RSS}" rel="alternate" type="application/rss+xml">
+</head>
+
+<body style="background-color:white;">
+    {block:Description}
+    <meta content="{MetaDescription}" name="description">{/block:Description}
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="//static.tumblr.com/fwe7wxh/TShnfpnl6/bootstrap.min.css" rel=
+    "stylesheet">
+    <link href="//static.tumblr.com/pirbnqz/Z8qnfpof4/style.css" rel=
+    "stylesheet">
+
+    <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+        <div class="container">
+            <div class="navbar-header page-scroll active">
+                <button class="navbar-toggle" data-target=
+                "#bs-example-navbar-collapse-1" data-toggle="collapse" type=
+                "button"><span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span>
+                <span class="icon-bar"></span></button> <a href="#index" id=
+                "index-link"><img class="img-responsive" src=
+                "http://static.tumblr.com/pirbnqz/vrLnfpohb/logo.png" style=
+                "height: 60px"></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id=
+            "bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href=
+                        "http://wearewildjokers.com/index.html#releases" id=
+                        "releases-link">Releases</a>
+                    </li>
+
+                    <li class="">
+                        <a href="http://wearewildjokers.com/index.html#artists"
+                        id="artists-link">Artists</a>
+                    </li>
+
+                    <li class="">
+                        <a href="http://wearewildjokers.com/index.html#radio"
+                        id="radio-link">Radio</a>
+                    </li>
+
+                    <li class="active">
+                        <a href="http://wearewildjokers.tumblr.com" id=
+                        "blog-link">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="main-content">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div id="posts" style="padding-top: 15px">
+                    {block:Posts}
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="post-header row">
+                                <h3 class="col-md-6 text-left">{block:Title}
+                                <a href="{Permalink}">{Title}</a>
+                                {/block:Title} {block:Link} <a href=
+                                "{Permalink}">{Name}</a> {/block:Link}</h3>
+
+                                <div class="col-md-6 text-right">
+                                    <a class=
+                                    "post-type-icon icon-3x {block:Text}icon-font{/block:Text}{block:Photo}icon-camera{/block:Photo}{block:Photoset}icon-camera{/block:Photoset}{block:Quote}icon-quote-right{/block:Quote}{block:Link}icon-link{/block:Link}{block:Chat}icon-comments{/block:Chat}{block:Video}icon-film{/block:Video}{block:Audio}icon-headphones{/block:Audio}"
+                                    href="{Permalink}" style=
+                                    "font-style: italic"></a>
+                                </div>
+                            </div>{block:Text}
+
+                            <div class="post text">
+                                {Body}
+                            </div>{/block:Text} {block:Photo}
+
+                            <div class="post photo">
+                                <div class="text-center">
+                                    {LinkOpenTag}<img alt="{PhotoAlt}" class=
+                                    "photo" src="{PhotoURL-500}">{LinkCloseTag}
+                                </div>
+                            </div>{/block:Photo} {block:Panorama}
+
+                            <div class="post panorama">
+                                <div class="text-center">
+                                    {LinkOpenTag} <img alt="{PhotoAlt}" src=
+                                    "{PhotoURL-Panorama}"> {LinkCloseTag}
+                                </div>{block:Caption}
+
+                                <div class="caption text-center" style=
+                                "padding: 5px; margin-left:auto; margin-right:auto; margin-top: 10px; width: 500px;">
+                                {Caption}
+                                </div>{/block:Caption}
+                            </div>{/block:Panorama} {block:Photoset}
+
+                            <div class="post photoset">
+                                <div class="text-center">
+                                    {Photoset-700}
+                                </div>{block:Caption}
+
+                                <div class="caption text-center" style=
+                                "padding: 5px; margin-left:auto; margin-right:auto; margin-top: 10px; width: 500px;">
+                                {Caption}
+                                </div>{/block:Caption}
+                            </div>{/block:Photoset} {block:Quote}
+
+                            <div class="post quote">
+                                "{Quote}" {block:Source}
+
+                                <div class="source">
+                                    {Source}
+                                </div>{/block:Source}
+                            </div>{/block:Quote} {block:Link}
+
+                            <div class="post link">
+                                <a class="link" href="{URL}"><i class=
+                                "icon-long-arrow-right"></i> {Name}</a>
+                                {block:Description}
+
+                                <div class="description">
+                                    {Description}
+                                </div>{/block:Description}
+                            </div>{/block:Link} {block:Chat}
+
+                            <div class="post chat">
+                                <ul class="chat">
+                                    <li style="list-style: none">
+                                    {block:Lines}</li>
+
+                                    <li class="{Alt} user_{UserNumber}">
+                                    {block:Label} <span class=
+                                    "label">{Label}</span> {/block:Label}
+                                    {Line}</li>
+
+                                    <li style="list-style: none">
+                                    {/block:Lines}</li>
+                                </ul>
+                            </div>{/block:Chat} {block:Video}
+
+                            <div class="post video">
+                                <div class="text-center">
+                                    {Video-500}
+                                </div>{block:Caption}
+
+                                <div class="caption text-center" style=
+                                "padding: 5px; margin-left:auto; margin-right:auto; margin-top: 10px; width: 500px;">
+                                {Caption}
+                                </div>{/block:Caption}
+                            </div>{/block:Video} {block:Audio}
+
+                            <div class="post audio">
+                                <div class="text-center">
+                                    {AudioPlayerBlack}
+                                </div>{block:Caption}
+
+                                <div class="caption text-center" style=
+                                "padding: 5px; margin-left:auto; margin-right:auto; margin-top: 10px; width: 500px;">
+                                {Caption}
+                                </div>{/block:Caption}
+                            </div>{/block:Audio}
+
+                            <div class="post-footer well">
+                                {block:Photo} {block:Caption}
+
+                                <div class="caption text-center" style=
+                                "padding: 5px; margin-left:auto; margin-right:auto; margin-top: 10px; width: 500px;">
+                                {Caption}
+                                </div>{/block:Caption} {/block:Photo}
+
+                                <div class="text-right">
+                                    <a href=
+                                    "/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}">
+                                    {DayOfMonthWithZero} {Month} {Year}</a>
+                                </div>{block:HasTags}
+
+                                <div class="tags text-right">
+                                    {block:Tags} <a href="{TagURL}">#{Tag}</a>
+                                    {/block:Tags}
+                                </div>{/block:HasTags} {block:IfEnableSocial}
+
+                                <div class="social">
+                                    <!-- Disqus integration -->
+                                    {block:IfDisqusShortname} {block:IndexPage}
+                                    <a class="dsq-comment-count pull-left"
+                                    href="{Permalink}#disqus_thread">Comments</a>
+                                    <script type="text/javascript">
+        var disqus_shortname = '{text:Disqus Shortname}';
+                                            (function () {
+                                            var s = document.createElement('script'); s.async = true;
+                                            s.type = 'text/javascript';
+                                            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                                            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                                            }());
+                                    </script> {/block:IndexPage}
+                                    {/block:IfDisqusShortname}
+
+                                    <ul class="social-links text-right">
+                                        <li class="social-link">
+                                            <a href="#" onclick=
+                                            "window.open('https://twitter.com/home?status={URLEncodedPermalink}', 'Share {Permalink}', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');">
+                                            <i class="icon-twitter-sign"></i>
+                                            Twitter</a>
+                                        </li>
+
+                                        <li class="social-link">
+                                            <a href="#" onclick=
+                                            "window.open('https://plus.google.com/share?url={URLEncodedPermalink}', 'Share {Permalink}', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');">
+                                            <i class=
+                                            "icon-google-plus-sign"></i>
+                                            Google+</a>
+                                        </li>
+                                        <!-- <li class="social-link"><a href="#" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u={URLEncodedPermalink}', 'Share {Permalink}', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');"><i class="icon-facebook-sign"></i> Facebook</a> </li> -->
+
+                                        <li class="social-link">
+                                            <a href="#" onclick=
+                                            "window.open('http://www.linkedin.com/shareArticle?mini=true&url={URLEncodedPermalink}&source={URLEncodedTitle}', 'Share {Permalink}', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');">
+                                            <i class="icon-linkedin-sign"></i>
+                                            LinkedIn</a>
+                                        </li>
+
+                                        <li class="social-link">
+                                            <a href="#" onclick=
+                                            "window.open('{ReblogURL}', 'Share {URLEncodedPermalink}');">
+                                            <i class="icon-heart"></i>
+                                            Tumblr</a>
+                                        </li>
+
+                                        <li class="social-link">
+                                            <a href=
+                                            "mailto:?subject=Shared%20link%20from%20{URLEncodedTitle}&body={URLEncodedPermalink}"
+                                            target="_self"><i class=
+                                            "icon-envelope share-icon"></i>
+                                            Email</a>
+                                        </li>
+                                    </ul>
+                                </div><!-- social -->
+                                {/block:IfEnableSocial}
+                            </div><!-- post footer -->
+                        </div><!-- panel body -->
+                    </div><!-- panel -->
+                    {/block:Posts}
+                </div><!-- posts -->
+            </div>
+        </div>{block:PermalinkPage} {block:IfEnableSocial}
+        {block:IfDisqusShortname}
+
+        <div id="disqus_thread"></div><script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                        var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
+
+                        /* * * DON'T EDIT BELOW THIS LINE * * */
+                        (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+        </script> <noscript>Please enable JavaScript to view the <a href=
+        "http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript> <a class="dsq-brlink" href=
+        "http://disqus.com">blog comments powered by <span class=
+        "logo-disqus">Disqus</span></a> {/block:IfDisqusShortname}
+        {/block:IfEnableSocial} {/block:PermalinkPage}
+
+        <div id="page-footer">
+            <div style="font-size: 1.5em">
+                {block:PreviousPage}
+
+                <div class="pull-left">
+                    <a href="{PreviousPage}" style=
+                    "text-decoration: none"><i class="icon-arrow-left"></i>
+                    Previous</a>
+                </div>{/block:PreviousPage} {block:NextPage}
+
+                <div class="pull-right">
+                    <a href="{NextPage}" style=
+                    "text-decoration: none"><i class="icon-arrow-right"></i>
+                    Next</a>
+                </div>{/block:NextPage}
+            </div>
+        </div>
+
+        <div style="display: none">
+            <span>{text:Snippet Author}</span>, <span>{text:Snippet
+            Byline}</span>, <a href="{Permalink}">{Permalink}</a>,
+            <span>{text:Snippet Affiliation}</span>, <span><span>{text:Snippet
+            Locality}</span>, <span>{text:Snippet Region}</span></span>
+        </div>
+    </div><!-- container -->
+    <!-- jQuery -->
+    <script src="//static.tumblr.com/fwe7wxh/cLPnfpnm4/jquery.min.js" type=
+    "text/javascript"></script> <script src="//static.tumblr.com/fwe7wxh/TyFnfpnlu/bootstrap.min.js"></script>
+</body>
+</html>
